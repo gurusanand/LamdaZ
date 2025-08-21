@@ -313,7 +313,7 @@ if st.sidebar.button("Reset State"):
 show_logo()
 if st.session_state._page == "Project List":
         section_header("Agentic AI / LLM Project Portfolio", "A showcase of unique agentic AI and LLM-powered solutions.")
-                table_html = '''
+table_html = '''
 <table>
     <thead>
         <tr><th>Project</th><th>Domain</th><th>Agentic AI / LLM Uniqueness</th><th>Customer Value</th></tr>
