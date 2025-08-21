@@ -385,7 +385,7 @@ if st.session_state._page == "Core Pillars":
     st.markdown('</div>', unsafe_allow_html=True)
 
 if st.session_state._page == "Key Activities":
-    
+    section_header("Key Activities", "Explore the key activities that drive success in AI initiatives.")
     for i, item in enumerate(KEY_ACTIVITIES, start=1):
         with st.container(border=True):
             st.markdown(f"**{i}. {item}**")
