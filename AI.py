@@ -313,7 +313,7 @@ if st.session_state._page == "Project List":
         <tr><th>Project</th><th>Domain</th><th>Agentic AI / LLM Uniqueness</th><th>Customer Value</th></tr>
     </thead>
     <tbody>
-        <tr><td colspan="4" style="text-align:left;background:#f5f7fa;padding:8px 10px;border-top:2px solid #e5e7eb;"><b>Core Banking (CASA, Onboarding & Compliance)</b></td></tr>
+        <tr><td colspan="4" style="text-align:left;background:#22223b;color:#fff;font-weight:bold;padding:10px 12px;border-top:2px solid #e5e7eb;">Core Banking (CASA, Onboarding & Compliance)</td></tr>
         <tr><td>Customer Engagement Analytics (RFM Model)</td><td>Banking / CASA Analytics</td><td>RFM-based time-series segmentation (Recency, Frequency, Monetary) with LLM-generated segment narratives</td><td>↑ segmentation accuracy by <b>35%</b> (campaign conversion); profiled 20k+ corporate customers</td></tr>
         <tr><td>Customer Stickiness Prediction</td><td>Banking / CASA Retention</td><td>Propensity-to-stay ML model with agentic triggers for RM outreach and cross/upsell</td><td>↑ retention by <b>25%</b> across 50k+ corporate clients; timely RM interventions</td></tr>
         <tr><td>Global eBanking Chatbot</td><td>Banking / Servicing</td><td>Multilingual chatbot for user guides & FAQs; omni-channel support</td><td>↓ internal support tickets by <b>40%</b>; ↑ response speed by <b>55%</b> for 5k+ users</td></tr>
