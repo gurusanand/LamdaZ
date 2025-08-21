@@ -303,35 +303,60 @@ if st.sidebar.button("Reset State"):
 # Pages
 # -----------------------------
 if st.session_state._page == "Project List":
-    section_header("Agentic AI / LLM Project Portfolio", "A showcase of unique agentic AI and LLM-powered solutions.")
-    st.markdown(
-        """
+        section_header("Agentic AI / LLM Project Portfolio", "A showcase of unique agentic AI and LLM-powered solutions.")
+        st.markdown(
+                """
 <table>
-<thead>
-<tr><th>Project</th><th>Domain</th><th>Agentic AI / LLM Uniqueness</th><th>Customer Value</th></tr>
-</thead>
-<tbody>
-<tr><td>DiscoverIQ</td><td>Banking / Discovery</td><td>Dynamic Q&A engine (fixed + LLM-generated questions); Role-based (User/Admin); insights, discrepancies, instant functional spec</td><td>Understand client objectives faster; automate discovery & documentation</td></tr>
-<tr><td>DataIQ</td><td>Data Strategy & Ops</td><td>Adaptive Q&A engine focused on enterprise data landscape (sources, quality, governance, analytics readiness); auto-generates heatmaps & gap analysis</td><td>Accelerates data discovery, highlights gaps, and builds roadmap for modernization</td></tr>
-<tr><td>AIGovernanceIQ</td><td>Governance & Compliance</td><td>Agentic AI–driven discovery engine for AI policies, risk controls, compliance alignment (NIST, MAS FEAT, EU AI Act); produces governance scorecards</td><td>Simplifies regulatory alignment, provides continuous governance insights</td></tr>
-<tr><td>AISafetyIQ</td><td>AI Risk & Safety</td><td>Interactive diagnostic chat for adversarial risk, model robustness, bias & fairness; generates mitigation playbooks and guardrails</td><td>Identifies AI risks early, reduces compliance exposure, improves model trustworthiness</td></tr>
-<tr><td>PeopleInsight</td><td>HR / Workforce Analytics</td><td>Predictive, prescriptive, autonomous people analytics using Agentic AI</td><td>Next-gen HR intelligence beyond dashboards</td></tr>
-<tr><td>OnyxGreen</td><td>Compliance</td><td>Due diligence & compliance automation; autonomous guardrails</td><td>Continuous monitoring of sanctions, regulations, risks</td></tr>
-<tr><td>HotelZ Backoffice Automation</td><td>Hospitality Shared Services</td><td>Multi-agent workflow (memory agents + validation agents) for HR, Finance, Procurement, IT</td><td>Efficiency, transparency, fraud prevention in hotel ops</td></tr>
-<tr><td>EagleEye</td><td>AI Observability & Security</td><td>Multi-agent MCP architecture (AI Security Agent, explainability, connectors)</td><td>Risk mitigation, explainability, compliance</td></tr>
-<tr><td>AI Strategy Orchestrator</td><td>Enterprise Strategy</td><td>LangGraph hierarchical orchestration; agents simulate governance, stakeholder mgmt, AI culture</td><td>Mock VP-level AI strategy tool with PDF + prototype</td></tr>
-<tr><td>Wealth Management Agentic AI</td><td>Finance</td><td>Autonomous life-event orchestration, compliance guardrails, portfolio simulations</td><td>Differentiated digital wealth advisory</td></tr>
-<tr><td>IT Help Desk Agent</td><td>IT Ops</td><td>L0/L1 issue resolution with screenshot analysis; escalation loop</td><td>Reduced IT support load; faster issue resolution</td></tr>
-<tr><td>Prompt Injection Tester</td><td>Cybersecurity</td><td>Streamlit app testing bots against jailbreak, override, leakage</td><td>Strengthens chatbot resilience</td></tr>
-<tr><td>Multi-Agent RAG Chatbot</td><td>Enterprise Knowledge Mgmt</td><td>LangGraph orchestration; MongoDB memory; FAISS retrieval; explainability & confidence index</td><td>Reliable enterprise-grade chatbot</td></tr>
-<tr><td>AIRE™ Framework</td><td>AI Readiness</td><td>Proprietary maturity framework; adaptive questionnaire → dashboard</td><td>Differentiates AI consulting; aligns with NIST, FEAT, EU AI Act</td></tr>
-<tr><td>Pulse+</td><td>Workforce / Employee Well-being</td><td>AI-powered pulse survey & sentiment agent; tracks stress, morale, productivity in real time</td><td>Gives HR & leadership early warning signals</td></tr>
-<tr><td>KYC / AML Agent</td><td>Banking / Compliance</td><td>Multi-agent due diligence (doc parsing, anomaly detection, sanctions screening); smart memory for clients</td><td>Cuts onboarding time, reduces fraud & compliance breaches</td></tr>
-</tbody>
+    <thead>
+        <tr><th>Project</th><th>Domain</th><th>Agentic AI / LLM Uniqueness</th><th>Customer Value</th></tr>
+    </thead>
+    <tbody>
+        <!-- ===== Core Banking (CASA / Onboarding & Servicing / Compliance) ===== -->
+        <tr><td>Customer Engagement Analytics (RFM Model)</td><td>Banking / CASA Analytics</td><td>RFM-based time-series segmentation (Recency, Frequency, Monetary) with LLM-generated segment narratives</td><td>↑ segmentation accuracy by <b>35%</b> (campaign conversion); profiled 20k+ corporate customers</td></tr>
+        <tr><td>Customer Stickiness Prediction</td><td>Banking / CASA Retention</td><td>Propensity-to-stay ML model with agentic triggers for RM outreach and cross/upsell</td><td>↑ retention by <b>25%</b> across 50k+ corporate clients; timely RM interventions</td></tr>
+        <tr><td>Global eBanking Chatbot</td><td>Banking / Servicing</td><td>Multilingual chatbot for user guides & FAQs; omni-channel support</td><td>↓ internal support tickets by <b>40%</b>; ↑ response speed by <b>55%</b> for 5k+ users</td></tr>
+        <tr><td>Multi-Agent RAG Chatbot</td><td>Banking / CASA Servicing</td><td>LangGraph orchestration; MongoDB memory; FAISS retrieval; explainability & confidence index</td><td>Faster CASA query resolution; reliable enterprise-grade assistant</td></tr>
+        <tr><td>KYC / AML Agent</td><td>Banking / Compliance</td><td>Multi-agent due diligence (doc parsing, anomaly detection, sanctions screening); client smart-memory</td><td>↓ onboarding time; ↓ fraud & compliance breaches; reduced false positives</td></tr>
+        <tr><td>EagleEye</td><td>AI Observability & Security</td><td>Multi-agent MCP architecture (AI Security Agent, explainability, connectors)</td><td>Risk mitigation, explainability, and compliance across core systems</td></tr>
+
+
+        <!-- ===== Lending / Trade / ESG ===== -->
+        <tr><td>ROBIN – Loan Contract Key Data Extraction</td><td>Loans / Syndicated Loans</td><td>GenAI/NLP contract parsing; key-value extraction; schema mapping & covenant highlights</td><td>↓ loan processing TAT by <b>40%</b> across 10k+ contracts; faster onboarding & credit decisioning</td></tr>
+        <tr><td>Green Loan Identifier</td><td>Loans / ESG</td><td>Custom GenAI model to classify & extract Green-Loan clauses from loan contracts</td><td>↓ ESG classification time by <b>70%</b> across 5k+ contracts; supports compliance reporting</td></tr>
+        <tr><td>Phoenix – Trade Document Processing (BERT/NLP)</td><td>Trade Finance / Document Processing</td><td>BERT-based NLP engine extracting 70+ data points; queueing & human-in-the-loop validation</td><td>Saves <b>20k</b> hours annually in SG; projected <b>50k</b> globally; ↓ manual processing by <b>80%</b></td></tr>
+        <tr><td>OnyxGreen</td><td>ESG / Climate Finance</td><td>Digital assistant to surface genuine climate projects that reduce carbon pollution</td><td>Accelerates investor discovery & supports internal compliance reporting</td></tr>
+
+        <!-- ===== Governance / Risk / Observability ===== -->
+        <tr><td>AIGovernanceIQ</td><td>Governance & Compliance</td><td>Agentic discovery for AI policies, risk controls, FEAT/NIST/EU AI Act alignment; governance scorecards</td><td>Streamlines regulatory alignment and audit readiness</td></tr>
+        <tr><td>AISafetyIQ</td><td>AI Risk & Safety</td><td>Interactive diagnostics for adversarial risk, robustness, bias/fairness; guardrail playbooks</td><td>Early risk detection; improved model trustworthiness</td></tr>
+
+         <!-- ===== Markets / Trading ===== -->
+         <tr><td>Trading Application AgenticAI</td><td>Capital Markets / Trading</td><td>Multi-agent workflow for pre-trade checks, strategy selection, risk/compliance guardrails; RAG over market microstructure & house policies</td><td>Accelerates trade decisioning, improves best-execution compliance, reduces operational risk</td></tr>
+   
+        <!-- ===== Data / RM Productivity ===== -->
+        <tr><td>Analytic Playbook</td><td>Banking / RM Analytics</td><td>GenAI (PandasAI-powered) chat over uploaded datasets; auto code-gen & visuals</td><td>↑ data accessibility & productivity for <b>800+</b> RMs/dealers; no data-team dependency</td></tr>
+        <tr><td>DiscoverIQ</td><td>Banking / Discovery</td><td>Dynamic Q&A (fixed + LLM-generated); role-based views; instant functional spec</td><td>Faster understanding of core-banking objectives; automated documentation</td></tr>
+        <tr><td>DataIQ</td><td>Data Strategy & Ops</td><td>Adaptive Q&A on data landscape (sources, quality, governance, analytics readiness); auto heatmaps & gaps</td><td>Accelerates discovery and modernization roadmap for CASA data</td></tr>
+        <tr><td>RM Playbook Pulse</td><td>Banking / RM Productivity</td><td>Agentic nudge engine with daily “pulse” insights; contextual playbooks over CASA/transaction data; auto-generated outreach scripts</td><td>Improves RM focus on high-propensity customers; shortens prep time; lifts cross-/upsell and retention</td></tr>
+        <tr><td>DiscoverIQ</td><td>Banking / Discovery</td><td>Dynamic Q&A (fixed + LLM-generated); role-based views; instant functional spec</td><td>Faster understanding of core-banking objectives; automated documentation</td></tr>
+        
+        <!-- ===== Internal Ops / Policy ===== -->
+        <tr><td>Agentic Workflow</td><td>Banking / Policy & Ops</td><td>AI agents answering regulatory & operational policy queries via RAG over internal corpus</td><td>↓ internal query resolution time by <b>35%</b> across 15k+ policy inquiries</td></tr>
+
+        <!-- ===== Enterprise / HR / Tools ===== -->
+        <tr><td>Sophia – HR Chatbot (Gen Z Focus)</td><td>HR / Employee Services</td><td>GenAI chatbot for leave, policies, benefits; channel-agnostic UX tuned for Gen Z</td><td>↑ HR service adoption by <b>60%</b>; handles 2k+ monthly queries</td></tr>
+        <tr><td>AI Strategy Orchestrator</td><td>Enterprise Strategy</td><td>LangGraph hierarchical orchestration; agents for governance, stakeholder mgmt, AI culture</td><td>Exec-level strategy simulator (PDF + prototype)</td></tr>
+        <tr><td>Prompt Injection Tester</td><td>Cybersecurity</td><td>Streamlit app stress-testing chatbots (jailbreak, override, leakage)</td><td>Strengthens chatbot resilience</td></tr>
+        <tr><td>IT Help Desk Agent</td><td>IT Ops</td><td>L0/L1 issue resolution with screenshot analysis; auto-escalation loop</td><td>↓ support load; faster resolution</td></tr>
+        <tr><td>Wealth Management Agentic AI</td><td>Wealth / Advisory</td><td>Autonomous life-event orchestration, compliance guardrails, portfolio simulations</td><td>Differentiated digital wealth experience</td></tr>
+        <tr><td>PeopleInsight</td><td>HR / Workforce Analytics</td><td>Predictive, prescriptive, autonomous people analytics with Agentic AI</td><td>Next-gen HR intelligence beyond dashboards</td></tr>
+        <tr><td>HotelZ Backoffice Automation</td><td>Hospitality Shared Services</td><td>Multi-agent workflow (memory + validation agents) for HR, Finance, Procurement, IT</td><td>Efficiency, transparency, fraud prevention in hotel ops</td></tr>
+        <tr><td>AIRE™ Framework</td><td>AI Readiness</td><td>Proprietary maturity framework; adaptive questionnaire → dashboard</td><td>Differentiates AI consulting; aligns with NIST, FEAT, EU AI Act</td></tr>
+    </tbody>
 </table>
-        """,
-        unsafe_allow_html=True
-    )
+                """,
+                unsafe_allow_html=True
+        )
 elif st.session_state._page == "Projects Case Studies":
     section_header("Case #1 : AML – Mule and Shell Accounts", "Project to identify Money Mule & Shell Accounts for SG / HK")
     st.markdown("""
