@@ -19,7 +19,7 @@ def show_logo():
         '<div style="background:white; border-radius:12px; padding:8px 16px 8px 8px; width:170px; position:absolute; top:18px; right:18px; z-index:999; text-align:right;">',
         unsafe_allow_html=True
     )
-    st.image("logo.png", width=140)
+    st.image("footer-logo.svg", width=140)
     st.markdown('</div>', unsafe_allow_html=True)
 
 # Optional imports (handled gracefully)
@@ -310,10 +310,10 @@ if st.sidebar.button("Reset State"):
 # -----------------------------
 # Pages
 # -----------------------------
-show_logo()
 if st.session_state._page == "Project List":
-        section_header("Agentic AI / LLM Project Portfolio", "A showcase of unique agentic AI and LLM-powered solutions.")
-        table_html = '''
+    show_logo()
+    section_header("Agentic AI / LLM Project Portfolio", "A showcase of unique agentic AI and LLM-powered solutions.")
+    table_html = '''
 <table>
     <thead>
         <tr><th>Project</th><th>Domain</th><th>Agentic AI / LLM Uniqueness</th><th>Customer Value</th></tr>
