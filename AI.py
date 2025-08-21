@@ -291,6 +291,7 @@ if "_showcase" not in st.session_state:
 if "_slide" not in st.session_state:
     st.session_state._slide = 0
 
+st.sidebar.image("footer-logo.svg", width=140)
 st.sidebar.title("AI Practice Framework")
 nav = st.sidebar.radio(
     "Navigate",
