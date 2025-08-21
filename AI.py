@@ -402,7 +402,7 @@ elif st.session_state._page == "Projects Case Studies":
     </tbody>
 </table>
 '''
-        st.markdown(table_html, unsafe_allow_html=True)
+    st.markdown(table_html, unsafe_allow_html=True)
     with col1:
         st.markdown("### Why this matters")
         st.write(
