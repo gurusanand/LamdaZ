@@ -502,11 +502,11 @@ elif st.session_state._page == "Showcase Mode":
     with c1:
         if st.button("◀ Prev", disabled=(idx == 0)):
             st.session_state._slide = max(0, idx - 1)
-            st.experimental_rerun()
+            st.rerun()
     with c2:
         if st.button("Next ▶", disabled=(idx == len(slides)-1)):
             st.session_state._slide = min(len(slides)-1, idx + 1)
-            st.experimental_rerun()
+            st.rerun()
 
     st.caption("Tip: Pair this with voiceover or a live demo of the diagnostic.")
 
