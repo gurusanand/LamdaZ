@@ -346,7 +346,7 @@ if st.session_state._page == "Project List":
     </tbody>
 </table>
 '''
-        st.markdown(table_html, unsafe_allow_html=True)
+    st.markdown(table_html, unsafe_allow_html=True)
 elif st.session_state._page == "Projects Case Studies":
     show_logo()
     section_header("Case #1 : AML – Mule and Shell Accounts", "Project to identify Money Mule & Shell Accounts for SG / HK")
