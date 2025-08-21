@@ -14,13 +14,6 @@ from typing import Dict, List
 
 import streamlit as st
 
-def show_logo():
-    st.markdown(
-        '<div style="background:white; border-radius:12px; padding:8px 16px 8px 8px; width:170px; position:absolute; top:53px; right:18px; z-index:999; text-align:right;">',
-        unsafe_allow_html=True
-    )
-    st.image("footer-logo.svg", width=140)
-    st.markdown('</div>', unsafe_allow_html=True)
 
 # Optional imports (handled gracefully)
 try:
@@ -291,7 +284,7 @@ if "_showcase" not in st.session_state:
 if "_slide" not in st.session_state:
     st.session_state._slide = 0
 
-st.sidebar.image("footer-logo.svg", width=140)
+st.sidebar.image("footer-logo.svg", width=160)
 st.sidebar.title("AI Practice Framework")
 nav = st.sidebar.radio(
     "Navigate",
@@ -312,8 +305,8 @@ if st.sidebar.button("Reset State"):
 # Pages
 # -----------------------------
 if st.session_state._page == "Project List":
-    show_logo()
-    section_header("Agentic AI / LLM Project Portfolio", "A showcase of unique agentic AI and LLM-powered solutions.")
+    st.markdown("### Agentic AI / LLM Project Portfolio")
+    st.markdown("A showcase of unique agentic AI and LLM-powered solutions.")
     table_html = '''
 <table>
     <thead>
