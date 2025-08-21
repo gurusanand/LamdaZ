@@ -362,9 +362,9 @@ if st.session_state._page == "Project List":
 elif st.session_state._page == "Projects Case Studies":
     
     section_header("Case #1 : AML – Mule and Shell Accounts", "Project to identify Money Mule & Shell Accounts for SG / HK")
-        show_logo()
-        section_header("Agentic AI / LLM Project Portfolio", "A showcase of unique agentic AI and LLM-powered solutions.")
-        table_html = '''
+    show_logo()
+    section_header("Agentic AI / LLM Project Portfolio", "A showcase of unique agentic AI and LLM-powered solutions.")
+    table_html = '''
 <table>
     <thead>
         <tr><th>Project</th><th>Domain</th><th>Agentic AI / LLM Uniqueness</th><th>Customer Value</th></tr>
