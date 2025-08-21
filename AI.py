@@ -311,8 +311,8 @@ st.sidebar.image("footer-logo.svg", width=160)
 st.sidebar.title("AI Practice Framework")
 nav = st.sidebar.radio(
     "Navigate",
-    ["Overview", "Core Pillars", "Key Activities", "Maturity Diagnostic", "Ecosystem Map", "Showcase Mode", "Project List", "Projects Case Studies"],
-    index=["Overview", "Core Pillars", "Key Activities", "Maturity Diagnostic", "Ecosystem Map", "Showcase Mode", "Project List", "Projects Case Studies"].index(st.session_state._page) if st.session_state._page in ["Overview", "Core Pillars", "Key Activities", "Maturity Diagnostic", "Ecosystem Map", "Showcase Mode", "Project List", "Projects Case Studies"] else 0,
+    ["Overview", "Core Pillars", "Key Activities", "Maturity Diagnostic", "Ecosystem Map", "Showcase Mode", "Project List"],
+    index=["Overview", "Core Pillars", "Key Activities", "Maturity Diagnostic", "Ecosystem Map", "Showcase Mode", "Project List"].index(st.session_state._page) if st.session_state._page in ["Overview", "Core Pillars", "Key Activities", "Maturity Diagnostic", "Ecosystem Map", "Showcase Mode", "Project List"] else 0,
 )
 st.session_state._page = nav
 
@@ -328,8 +328,8 @@ if st.sidebar.button("Reset State"):
 # Pages
 # -----------------------------
 if st.session_state._page == "Project List":
-    st.markdown("### Agentic AI / LLM Project Portfolio")
-    st.markdown("A showcase of unique agentic AI and LLM-powered solutions.")
+    section_header('AI/GenAI, Agentic AI / LLM Project Portfolio', 'List of Projects Implemented ')
+
     table_html = '''
     <table>
         <thead>
@@ -373,43 +373,9 @@ if st.session_state._page == "Project List":
     </table>
     '''
     st.markdown(table_html, unsafe_allow_html=True)
-elif st.session_state._page == "Projects Case Studies":
     
-    section_header("Case #1 : AML – Mule and Shell Accounts", "Project to identify Money Mule & Shell Accounts for SG / HK")
-    # Define 'col1' using Streamlit's columns function
-    col1, col2 = st.columns(2)
 
-    # Use 'col1' for the intended layout
-    with col1:
-        st.markdown("### Why this matters")
-        st.write(
-            """
-            - Align AI with strategy, outcomes, and regulation.
-            - De-risk models with robust governance and validation.
-            - Build platforms that scale across cloud and data boundaries.
-            - Upskill teams and leverage ecosystem partnerships.
-            """
-        )
-        progress_demo()
-        st.caption("Tip: Use the left nav to jump between sections. Try the **Maturity Diagnostic** to make the session interactive.")
-
-    with col2:
-        if _HAS_LOTTIE:
-            # Fallback animation if offline will be ignored silently
-            anim = load_lottie_url("https://assets6.lottiefiles.com/packages/lf20_Stt1R5.json")
-            if anim:
-                st_lottie(anim, height=320, key="intro_anim")
-        st.markdown(
-            """
-            <div class="panel">
-            <b>Presentation Mode</b><br/>
-            Turn on <span class="tag">Showcase Mode</span> in the sidebar to step through a Jobs‑style narrative.
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-elif st.session_state._page == "Core Pillars":
+if st.session_state._page == "Core Pillars":
     
     section_header("Core Pillars", "Explore the 8 pillars that make an AI Practice resilient and scalable.")
 
@@ -418,15 +384,13 @@ elif st.session_state._page == "Core Pillars":
         pillar_card(p)
     st.markdown('</div>', unsafe_allow_html=True)
 
-elif st.session_state._page == "Key Activities":
+if st.session_state._page == "Key Activities":
     
-    section_header("Key Activities", "What we do to operationalize strategy and deliver outcomes.")
-
     for i, item in enumerate(KEY_ACTIVITIES, start=1):
         with st.container(border=True):
             st.markdown(f"**{i}. {item}**")
 
-elif st.session_state._page == "Maturity Diagnostic":
+if st.session_state._page == "Maturity Diagnostic":
     
     section_header("Interactive Maturity Diagnostic", "Quickly gauge your organization's readiness across the AI Practice pillars.")
 
@@ -465,12 +429,12 @@ elif st.session_state._page == "Maturity Diagnostic":
         payload = {"maturity": values}
         st.download_button("Download JSON", data=json.dumps(payload, indent=2), file_name="ai_practice_maturity.json")
 
-elif st.session_state._page == "Ecosystem Map":
+if st.session_state._page == "Ecosystem Map":
     
     section_header("Ecosystem & Flow", "How the CoE orchestrates governance, platforms, delivery, and outcomes with partners.")
     ecosystem_graphviz()
 
-elif st.session_state._page == "Showcase Mode":
+if st.session_state._page == "Showcase Mode":
     # Do not assign to st.session_state._showcase after widget instantiation
     # Use the value from session_state instead
     
@@ -525,6 +489,15 @@ elif st.session_state._page == "Showcase Mode":
             st.rerun()
 
     st.caption("Tip: Pair this with voiceover or a live demo of the diagnostic.")
+# Render the Overview page
+if st.session_state._page == 'Overview':
+    section_header('Overview', 'Welcome to the AI Practice Framework')
+    st.markdown('Explore the pillars, activities, and diagnostics that make AI scalable and resilient.')
+    st.markdown('---')
+    st.markdown('### Key Features')
+    st.markdown('- **Core Pillars**: Strategy, Governance, Innovation, and more.')
+    st.markdown('- **Interactive Diagnostics**: Gauge AI maturity and readiness.')
+    st.markdown('- **Ecosystem Map**: Visualize partnerships and workflows.')
 
 # -----------------------------
 # Footer
@@ -538,12 +511,3 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Render the Overview page
-if st.session_state._page == 'Overview':
-    section_header('Overview', 'Welcome to the AI Practice Framework')
-    st.markdown('Explore the pillars, activities, and diagnostics that make AI scalable and resilient.')
-    st.markdown('---')
-    st.markdown('### Key Features')
-    st.markdown('- **Core Pillars**: Strategy, Governance, Innovation, and more.')
-    st.markdown('- **Interactive Diagnostics**: Gauge AI maturity and readiness.')
-    st.markdown('- **Ecosystem Map**: Visualize partnerships and workflows.')
