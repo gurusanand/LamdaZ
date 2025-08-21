@@ -16,8 +16,8 @@ import streamlit as st
 
 def show_logo():
     st.markdown(
-        '''<div style="background:white; border-radius:12px; padding:8px 16px 8px 8px; width:170px; display:inline-block; margin-bottom:10px;">
-            <img src="logo.png" style="width:140px; display:block; margin:auto;" alt="Logo"/>
+        '''<div style="background:white; border-radius:12px; padding:8px 16px 8px 8px; width:170px; position:absolute; top:18px; right:18px; z-index:999; text-align:right;">
+            <img src="logo.png" style="width:140px; display:inline-block;" alt="Logo"/>
         </div>''',
         unsafe_allow_html=True
     )
