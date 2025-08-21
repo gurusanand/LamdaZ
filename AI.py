@@ -362,42 +362,47 @@ if st.session_state._page == "Project List":
 elif st.session_state._page == "Projects Case Studies":
     
     section_header("Case #1 : AML – Mule and Shell Accounts", "Project to identify Money Mule & Shell Accounts for SG / HK")
-    st.markdown("""
-**Project Background:** To Identify the Money Mule & Shell Accounts for SG / HK
-
-
-**Solutions**
-
-A model-based solution is developed, with a set of defined detection features, to identify the money mule /Shell behaviors based on specific red flags, known money mules from external sources (e.g, police orders) and/or previous financial crime cases investigated internally with money mule /Shell accounts identified.
-Based on the identified money mule/Shell behaviors, the solution will detect potential money mule/Shell accounts by leveraging static client data as well as dynamic transaction data. Triggering conditions will be adjusted from time to time automatically based on investigation result of each output and/or known money mules/Shell from external sources. Running frequency is expected to be on monthly basis.
-
-**Data Sources**
-
-**Transactional Data** from Payment and Core Banking. Client uses industry leading products like Detica, Actimize and Mantas for transaction monitoring
-**Tools Used** : Oracle PE data model and analytics platform, XG boost base algorithm and Python scripts
-
-**Modelling Process & Investigation flow**
-Data Sourcing --> Feature development (RedFlags are mapped to workable feature) --> Model development --> Model output validation --> Model implementation -> Alert generation--> Investigation
-
-**Model Accuracy** : 98%. Model has predicted 10 – 15% of accounts as a potential Mule customer
-
-**Challenges**
-1. Data Sourcing for the look back period for past 18 months
-2. Data Analytics tools capacity to load large data set
-3. Availability of the environments with packages for supporting the statistical algorithms
-4. Data platform with compatibilities with Data Analytical tools.
-""")
-    st.image("case1.png", caption="Case #1 : AML – Mule and Shell Accounts", use_column_width=True)
-
-    
-elif st.session_state._page == "Overview":
-    
-    section_header(
-        "AI Practice Framework",
-        "A modern, animated walkthrough of the core pillars, key activities, and an interactive maturity diagnostic.",
-    )
-
-    col1, col2 = st.columns([1.4, 1])
+        show_logo()
+        section_header("Agentic AI / LLM Project Portfolio", "A showcase of unique agentic AI and LLM-powered solutions.")
+        table_html = '''
+<table>
+    <thead>
+        <tr><th>Project</th><th>Domain</th><th>Agentic AI / LLM Uniqueness</th><th>Customer Value</th></tr>
+    </thead>
+    <tbody>
+        <tr><td colspan="4" style="text-align:left;background:#f5f7fa;padding:8px 10px;border-top:2px solid #e5e7eb;"><b>Core Banking (CASA / Onboarding & Servicing / Compliance)</b></td></tr>
+        <tr><td>Customer Engagement Analytics (RFM Model)</td><td>Banking / CASA Analytics</td><td>RFM-based time-series segmentation (Recency, Frequency, Monetary) with LLM-generated segment narratives</td><td>↑ segmentation accuracy by <b>35%</b> (campaign conversion); profiled 20k+ corporate customers</td></tr>
+        <tr><td>Customer Stickiness Prediction</td><td>Banking / CASA Retention</td><td>Propensity-to-stay ML model with agentic triggers for RM outreach and cross/upsell</td><td>↑ retention by <b>25%</b> across 50k+ corporate clients; timely RM interventions</td></tr>
+        <tr><td>Global eBanking Chatbot</td><td>Banking / Servicing</td><td>Multilingual chatbot for user guides & FAQs; omni-channel support</td><td>↓ internal support tickets by <b>40%</b>; ↑ response speed by <b>55%</b> for 5k+ users</td></tr>
+        <tr><td>Multi-Agent RAG Chatbot</td><td>Banking / CASA Servicing</td><td>LangGraph orchestration; MongoDB memory; FAISS retrieval; explainability & confidence index</td><td>Faster CASA query resolution; reliable enterprise-grade assistant</td></tr>
+        <tr><td>KYC / AML Agent</td><td>Banking / Compliance</td><td>Multi-agent due diligence (doc parsing, anomaly detection, sanctions screening); client smart-memory</td><td>↓ onboarding time; ↓ fraud & compliance breaches; reduced false positives</td></tr>
+        <tr><td colspan="4" style="text-align:left;background:#f5f7fa;padding:8px 10px;border-top:2px solid #e5e7eb;"><b>Lending / Trade / ESG</b></td></tr>
+        <tr><td>ROBIN – Loan Contract Key Data Extraction</td><td>Loans / Syndicated Loans</td><td>GenAI/NLP contract parsing; key-value extraction; schema mapping & covenant highlights</td><td>↓ loan processing TAT by <b>40%</b> across 10k+ contracts; faster onboarding & credit decisioning</td></tr>
+        <tr><td>Green Loan Identifier</td><td>Loans / ESG</td><td>Custom GenAI model to classify & extract Green-Loan clauses from loan contracts</td><td>↓ ESG classification time by <b>70%</b> across 5k+ contracts; supports compliance reporting</td></tr>
+        <tr><td>Phoenix – Trade Document Processing (BERT/NLP)</td><td>Trade Finance / Document Processing</td><td>BERT-based NLP engine extracting 70+ data points; queueing & human-in-the-loop validation</td><td>Saves <b>20k</b> hours annually in SG; projected <b>50k</b> globally; ↓ manual processing by <b>80%</b></td></tr>
+        <tr><td colspan="4" style="text-align:left;background:#f5f7fa;padding:8px 10px;border-top:2px solid #e5e7eb;"><b>Governance / Risk / Observability</b></td></tr>
+        <tr><td>AIGovernanceIQ</td><td>Governance & Compliance</td><td>Agentic discovery for AI policies, risk controls, FEAT/NIST/EU AI Act alignment; governance scorecards</td><td>Streamlines regulatory alignment and audit readiness</td></tr>
+        <tr><td>AISafetyIQ</td><td>AI Risk & Safety</td><td>Interactive diagnostics for adversarial risk, robustness, bias/fairness; guardrail playbooks</td><td>Early risk detection; improved model trustworthiness</td></tr>
+        <tr><td>EagleEye</td><td>AI Observability & Security</td><td>Multi-agent MCP architecture (AI Security Agent, explainability, connectors)</td><td>Risk mitigation, explainability, and compliance across core systems</td></tr>
+        <tr><td colspan="4" style="text-align:left;background:#f5f7fa;padding:8px 10px;border-top:2px solid #e5e7eb;"><b>Data / RM Productivity</b></td></tr>
+        <tr><td>Analytic Playbook</td><td>Banking / RM Analytics</td><td>GenAI (PandasAI-powered) chat over uploaded datasets; auto code-gen & visuals</td><td>↑ data accessibility & productivity for <b>800+</b> RMs/dealers; no data-team dependency</td></tr>
+        <tr><td>DiscoverIQ</td><td>Banking / Discovery</td><td>Dynamic Q&A (fixed + LLM-generated); role-based views; instant functional spec</td><td>Faster understanding of core-banking objectives; automated documentation</td></tr>
+        <tr><td>DataIQ</td><td>Data Strategy & Ops</td><td>Adaptive Q&A on data landscape (sources, quality, governance, analytics readiness); auto heatmaps & gaps</td><td>Accelerates discovery and modernization roadmap for CASA data</td></tr>
+        <tr><td colspan="4" style="text-align:left;background:#f5f7fa;padding:8px 10px;border-top:2px solid #e5e7eb;"><b>Internal Ops / Policy</b></td></tr>
+        <tr><td>Mizuho Agentic Workflow</td><td>Banking / Policy & Ops</td><td>AI agents answering regulatory & operational policy queries via RAG over internal corpus</td><td>↓ internal query resolution time by <b>35%</b> across 15k+ policy inquiries</td></tr>
+        <tr><td colspan="4" style="text-align:left;background:#f5f7fa;padding:8px 10px;border-top:2px solid #e5e7eb;"><b>Enterprise / HR / Tools</b></td></tr>
+        <tr><td>Sophia – HR Chatbot (Gen Z Focus)</td><td>HR / Employee Services</td><td>GenAI chatbot for leave, policies, benefits; channel-agnostic UX tuned for Gen Z</td><td>↑ HR service adoption by <b>60%</b>; handles 2k+ monthly queries</td></tr>
+        <tr><td>AI Strategy Orchestrator</td><td>Enterprise Strategy</td><td>LangGraph hierarchical orchestration; agents for governance, stakeholder mgmt, AI culture</td><td>Exec-level strategy simulator (PDF + prototype)</td></tr>
+        <tr><td>Prompt Injection Tester</td><td>Cybersecurity</td><td>Streamlit app stress-testing chatbots (jailbreak, override, leakage)</td><td>Strengthens chatbot resilience</td></tr>
+        <tr><td>IT Help Desk Agent</td><td>IT Ops</td><td>L0/L1 issue resolution with screenshot analysis; auto-escalation loop</td><td>↓ support load; faster resolution</td></tr>
+        <tr><td>Wealth Management Agentic AI</td><td>Wealth / Advisory</td><td>Autonomous life-event orchestration, compliance guardrails, portfolio simulations</td><td>Differentiated digital wealth experience</td></tr>
+        <tr><td>PeopleInsight</td><td>HR / Workforce Analytics</td><td>Predictive, prescriptive, autonomous people analytics with Agentic AI</td><td>Next-gen HR intelligence beyond dashboards</td></tr>
+        <tr><td>HotelZ Backoffice Automation</td><td>Hospitality Shared Services</td><td>Multi-agent workflow (memory + validation agents) for HR, Finance, Procurement, IT</td><td>Efficiency, transparency, fraud prevention in hotel ops</td></tr>
+        <tr><td>AIRE™ Framework</td><td>AI Readiness</td><td>Proprietary maturity framework; adaptive questionnaire → dashboard</td><td>Differentiates AI consulting; aligns with NIST, FEAT, EU AI Act</td></tr>
+    </tbody>
+</table>
+'''
+        st.markdown(table_html, unsafe_allow_html=True)
     with col1:
         st.markdown("### Why this matters")
         st.write(
