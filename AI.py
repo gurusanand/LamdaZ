@@ -16,7 +16,7 @@ import streamlit as st
 
 def show_logo():
     st.markdown(
-        '<div style="background:white; border-radius:12px; padding:8px 16px 8px 8px; width:170px; position:absolute; top:18px; right:18px; z-index:999; text-align:right;">',
+        '<div style="background:white; border-radius:12px; padding:8px 16px 8px 8px; width:170px; position:absolute; top:53px; right:18px; z-index:999; text-align:right;">',
         unsafe_allow_html=True
     )
     st.image("footer-logo.svg", width=140)
