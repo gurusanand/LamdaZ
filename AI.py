@@ -342,7 +342,7 @@ if st.session_state._page == "Project List":
 '''
     st.markdown(table_html, unsafe_allow_html=True)
 elif st.session_state._page == "Projects Case Studies":
-    show_logo()
+    
     section_header("Case #1 : AML – Mule and Shell Accounts", "Project to identify Money Mule & Shell Accounts for SG / HK")
     st.markdown("""
 **Project Background:** To Identify the Money Mule & Shell Accounts for SG / HK
@@ -373,7 +373,7 @@ Data Sourcing --> Feature development (RedFlags are mapped to workable feature) 
 
     
 elif st.session_state._page == "Overview":
-    show_logo()
+    
     section_header(
         "AI Practice Framework",
         "A modern, animated walkthrough of the core pillars, key activities, and an interactive maturity diagnostic.",
@@ -410,7 +410,7 @@ elif st.session_state._page == "Overview":
         )
 
 elif st.session_state._page == "Core Pillars":
-    show_logo()
+    
     section_header("Core Pillars", "Explore the 8 pillars that make an AI Practice resilient and scalable.")
 
     st.markdown('<div class="grid">', unsafe_allow_html=True)
@@ -419,7 +419,7 @@ elif st.session_state._page == "Core Pillars":
     st.markdown('</div>', unsafe_allow_html=True)
 
 elif st.session_state._page == "Key Activities":
-    show_logo()
+    
     section_header("Key Activities", "What we do to operationalize strategy and deliver outcomes.")
 
     for i, item in enumerate(KEY_ACTIVITIES, start=1):
@@ -427,7 +427,7 @@ elif st.session_state._page == "Key Activities":
             st.markdown(f"**{i}. {item}**")
 
 elif st.session_state._page == "Maturity Diagnostic":
-    show_logo()
+    
     section_header("Interactive Maturity Diagnostic", "Quickly gauge your organization's readiness across the AI Practice pillars.")
 
     # Sliders
@@ -466,14 +466,14 @@ elif st.session_state._page == "Maturity Diagnostic":
         st.download_button("Download JSON", data=json.dumps(payload, indent=2), file_name="ai_practice_maturity.json")
 
 elif st.session_state._page == "Ecosystem Map":
-    show_logo()
+    
     section_header("Ecosystem & Flow", "How the CoE orchestrates governance, platforms, delivery, and outcomes with partners.")
     ecosystem_graphviz()
 
 elif st.session_state._page == "Showcase Mode":
     # Do not assign to st.session_state._showcase after widget instantiation
     # Use the value from session_state instead
-    show_logo()
+    
     slides = [
         {
             "title": "Vision",
