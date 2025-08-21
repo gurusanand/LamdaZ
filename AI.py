@@ -14,6 +14,14 @@ from typing import Dict, List
 
 import streamlit as st
 
+def show_logo():
+    st.markdown(
+        '''<div style="background:white; border-radius:12px; padding:8px 16px 8px 8px; width:170px; display:inline-block; margin-bottom:10px;">
+            <img src="logo.png" style="width:140px; display:block; margin:auto;" alt="Logo"/>
+        </div>''',
+        unsafe_allow_html=True
+    )
+
 # Optional imports (handled gracefully)
 try:
     from streamlit_lottie import st_lottie
@@ -302,10 +310,10 @@ if st.sidebar.button("Reset State"):
 # -----------------------------
 # Pages
 # -----------------------------
+show_logo()
 if st.session_state._page == "Project List":
         section_header("Agentic AI / LLM Project Portfolio", "A showcase of unique agentic AI and LLM-powered solutions.")
-        st.markdown(
-                """
+        table_html = '''
 <table>
     <thead>
         <tr><th>Project</th><th>Domain</th><th>Agentic AI / LLM Uniqueness</th><th>Customer Value</th></tr>
@@ -314,34 +322,28 @@ if st.session_state._page == "Project List":
         <!-- ===== Core Banking (CASA / Onboarding & Servicing / Compliance) ===== -->
         <tr><td>Customer Engagement Analytics (RFM Model)</td><td>Banking / CASA Analytics</td><td>RFM-based time-series segmentation (Recency, Frequency, Monetary) with LLM-generated segment narratives</td><td>↑ segmentation accuracy by <b>35%</b> (campaign conversion); profiled 20k+ corporate customers</td></tr>
         <tr><td>Customer Stickiness Prediction</td><td>Banking / CASA Retention</td><td>Propensity-to-stay ML model with agentic triggers for RM outreach and cross/upsell</td><td>↑ retention by <b>25%</b> across 50k+ corporate clients; timely RM interventions</td></tr>
-        <tr><td>Global eBanking Chatbot</td><td>Banking / Servicing</td><td>Multilingual chatbot for user guides & FAQs; omni-channel support</td><td>↓ internal support tickets by <b>40%</b>; ↑ response speed by <b>55%</b> for 5k+ users</td></tr>
+        <tr><td>Mizuho Global eBanking Chatbot</td><td>Banking / Servicing</td><td>Multilingual chatbot for user guides & FAQs; omni-channel support</td><td>↓ internal support tickets by <b>40%</b>; ↑ response speed by <b>55%</b> for 5k+ users</td></tr>
         <tr><td>Multi-Agent RAG Chatbot</td><td>Banking / CASA Servicing</td><td>LangGraph orchestration; MongoDB memory; FAISS retrieval; explainability & confidence index</td><td>Faster CASA query resolution; reliable enterprise-grade assistant</td></tr>
         <tr><td>KYC / AML Agent</td><td>Banking / Compliance</td><td>Multi-agent due diligence (doc parsing, anomaly detection, sanctions screening); client smart-memory</td><td>↓ onboarding time; ↓ fraud & compliance breaches; reduced false positives</td></tr>
-        <tr><td>EagleEye</td><td>AI Observability & Security</td><td>Multi-agent MCP architecture (AI Security Agent, explainability, connectors)</td><td>Risk mitigation, explainability, and compliance across core systems</td></tr>
-
+        <tr><td>OnyxGreen</td><td>ESG / Climate Finance</td><td>Digital assistant to surface genuine climate projects that reduce carbon pollution</td><td>Accelerates investor discovery & supports internal compliance reporting</td></tr>
 
         <!-- ===== Lending / Trade / ESG ===== -->
         <tr><td>ROBIN – Loan Contract Key Data Extraction</td><td>Loans / Syndicated Loans</td><td>GenAI/NLP contract parsing; key-value extraction; schema mapping & covenant highlights</td><td>↓ loan processing TAT by <b>40%</b> across 10k+ contracts; faster onboarding & credit decisioning</td></tr>
         <tr><td>Green Loan Identifier</td><td>Loans / ESG</td><td>Custom GenAI model to classify & extract Green-Loan clauses from loan contracts</td><td>↓ ESG classification time by <b>70%</b> across 5k+ contracts; supports compliance reporting</td></tr>
         <tr><td>Phoenix – Trade Document Processing (BERT/NLP)</td><td>Trade Finance / Document Processing</td><td>BERT-based NLP engine extracting 70+ data points; queueing & human-in-the-loop validation</td><td>Saves <b>20k</b> hours annually in SG; projected <b>50k</b> globally; ↓ manual processing by <b>80%</b></td></tr>
-        <tr><td>OnyxGreen</td><td>ESG / Climate Finance</td><td>Digital assistant to surface genuine climate projects that reduce carbon pollution</td><td>Accelerates investor discovery & supports internal compliance reporting</td></tr>
 
         <!-- ===== Governance / Risk / Observability ===== -->
         <tr><td>AIGovernanceIQ</td><td>Governance & Compliance</td><td>Agentic discovery for AI policies, risk controls, FEAT/NIST/EU AI Act alignment; governance scorecards</td><td>Streamlines regulatory alignment and audit readiness</td></tr>
         <tr><td>AISafetyIQ</td><td>AI Risk & Safety</td><td>Interactive diagnostics for adversarial risk, robustness, bias/fairness; guardrail playbooks</td><td>Early risk detection; improved model trustworthiness</td></tr>
+        <tr><td>EagleEye</td><td>AI Observability & Security</td><td>Multi-agent MCP architecture (AI Security Agent, explainability, connectors)</td><td>Risk mitigation, explainability, and compliance across core systems</td></tr>
 
-         <!-- ===== Markets / Trading ===== -->
-         <tr><td>Trading Application AgenticAI</td><td>Capital Markets / Trading</td><td>Multi-agent workflow for pre-trade checks, strategy selection, risk/compliance guardrails; RAG over market microstructure & house policies</td><td>Accelerates trade decisioning, improves best-execution compliance, reduces operational risk</td></tr>
-   
         <!-- ===== Data / RM Productivity ===== -->
-        <tr><td>Analytic Playbook</td><td>Banking / RM Analytics</td><td>GenAI (PandasAI-powered) chat over uploaded datasets; auto code-gen & visuals</td><td>↑ data accessibility & productivity for <b>800+</b> RMs/dealers; no data-team dependency</td></tr>
+        <tr><td>Mizuho Analytic Playbook</td><td>Banking / RM Analytics</td><td>GenAI (PandasAI-powered) chat over uploaded datasets; auto code-gen & visuals</td><td>↑ data accessibility & productivity for <b>800+</b> RMs/dealers; no data-team dependency</td></tr>
         <tr><td>DiscoverIQ</td><td>Banking / Discovery</td><td>Dynamic Q&A (fixed + LLM-generated); role-based views; instant functional spec</td><td>Faster understanding of core-banking objectives; automated documentation</td></tr>
         <tr><td>DataIQ</td><td>Data Strategy & Ops</td><td>Adaptive Q&A on data landscape (sources, quality, governance, analytics readiness); auto heatmaps & gaps</td><td>Accelerates discovery and modernization roadmap for CASA data</td></tr>
-        <tr><td>RM Playbook Pulse</td><td>Banking / RM Productivity</td><td>Agentic nudge engine with daily “pulse” insights; contextual playbooks over CASA/transaction data; auto-generated outreach scripts</td><td>Improves RM focus on high-propensity customers; shortens prep time; lifts cross-/upsell and retention</td></tr>
-        <tr><td>DiscoverIQ</td><td>Banking / Discovery</td><td>Dynamic Q&A (fixed + LLM-generated); role-based views; instant functional spec</td><td>Faster understanding of core-banking objectives; automated documentation</td></tr>
-        
+
         <!-- ===== Internal Ops / Policy ===== -->
-        <tr><td>Agentic Workflow</td><td>Banking / Policy & Ops</td><td>AI agents answering regulatory & operational policy queries via RAG over internal corpus</td><td>↓ internal query resolution time by <b>35%</b> across 15k+ policy inquiries</td></tr>
+        <tr><td>Mizuho Agentic Workflow</td><td>Banking / Policy & Ops</td><td>AI agents answering regulatory & operational policy queries via RAG over internal corpus</td><td>↓ internal query resolution time by <b>35%</b> across 15k+ policy inquiries</td></tr>
 
         <!-- ===== Enterprise / HR / Tools ===== -->
         <tr><td>Sophia – HR Chatbot (Gen Z Focus)</td><td>HR / Employee Services</td><td>GenAI chatbot for leave, policies, benefits; channel-agnostic UX tuned for Gen Z</td><td>↑ HR service adoption by <b>60%</b>; handles 2k+ monthly queries</td></tr>
@@ -354,10 +356,10 @@ if st.session_state._page == "Project List":
         <tr><td>AIRE™ Framework</td><td>AI Readiness</td><td>Proprietary maturity framework; adaptive questionnaire → dashboard</td><td>Differentiates AI consulting; aligns with NIST, FEAT, EU AI Act</td></tr>
     </tbody>
 </table>
-                """,
-                unsafe_allow_html=True
-        )
+'''
+        st.markdown(table_html, unsafe_allow_html=True)
 elif st.session_state._page == "Projects Case Studies":
+    show_logo()
     section_header("Case #1 : AML – Mule and Shell Accounts", "Project to identify Money Mule & Shell Accounts for SG / HK")
     st.markdown("""
 **Project Background:** To Identify the Money Mule & Shell Accounts for SG / HK
@@ -388,6 +390,7 @@ Data Sourcing --> Feature development (RedFlags are mapped to workable feature) 
 
     
 elif st.session_state._page == "Overview":
+    show_logo()
     section_header(
         "AI Practice Framework",
         "A modern, animated walkthrough of the core pillars, key activities, and an interactive maturity diagnostic.",
@@ -424,6 +427,7 @@ elif st.session_state._page == "Overview":
         )
 
 elif st.session_state._page == "Core Pillars":
+    show_logo()
     section_header("Core Pillars", "Explore the 8 pillars that make an AI Practice resilient and scalable.")
 
     st.markdown('<div class="grid">', unsafe_allow_html=True)
@@ -432,6 +436,7 @@ elif st.session_state._page == "Core Pillars":
     st.markdown('</div>', unsafe_allow_html=True)
 
 elif st.session_state._page == "Key Activities":
+    show_logo()
     section_header("Key Activities", "What we do to operationalize strategy and deliver outcomes.")
 
     for i, item in enumerate(KEY_ACTIVITIES, start=1):
@@ -439,6 +444,7 @@ elif st.session_state._page == "Key Activities":
             st.markdown(f"**{i}. {item}**")
 
 elif st.session_state._page == "Maturity Diagnostic":
+    show_logo()
     section_header("Interactive Maturity Diagnostic", "Quickly gauge your organization's readiness across the AI Practice pillars.")
 
     # Sliders
@@ -477,12 +483,14 @@ elif st.session_state._page == "Maturity Diagnostic":
         st.download_button("Download JSON", data=json.dumps(payload, indent=2), file_name="ai_practice_maturity.json")
 
 elif st.session_state._page == "Ecosystem Map":
+    show_logo()
     section_header("Ecosystem & Flow", "How the CoE orchestrates governance, platforms, delivery, and outcomes with partners.")
     ecosystem_graphviz()
 
 elif st.session_state._page == "Showcase Mode":
     # Do not assign to st.session_state._showcase after widget instantiation
     # Use the value from session_state instead
+    show_logo()
     slides = [
         {
             "title": "Vision",
