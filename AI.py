@@ -307,7 +307,7 @@ if st.sidebar.button("Reset State"):
 if st.session_state._page == "Project List":
     st.markdown("### Agentic AI / LLM Project Portfolio")
     st.markdown("A showcase of unique agentic AI and LLM-powered solutions.")
-        table_html = '''
+    table_html = '''
 <table>
     <thead>
         <tr><th>Project</th><th>Domain</th><th>Agentic AI / LLM Uniqueness</th><th>Customer Value</th></tr>
@@ -357,7 +357,7 @@ if st.session_state._page == "Project List":
     </tbody>
 </table>
 '''
-        st.markdown(table_html, unsafe_allow_html=True)
+    st.markdown(table_html, unsafe_allow_html=True)
 elif st.session_state._page == "Projects Case Studies":
     
     section_header("Case #1 : AML – Mule and Shell Accounts", "Project to identify Money Mule & Shell Accounts for SG / HK")
